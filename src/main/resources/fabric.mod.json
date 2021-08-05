@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "badstdout",
+  "version": "${version}",
+  "name": "BadStdOut",
+  "description": "Replaces 'STDOUT' in minecraft logs and console with name of the class that dared to use System.out",
+  "authors": [
+    "Szum123321"
+  ],
+  "contact": { },
+  "license": "GPL-3.0",
+  "icon": "assets/badstdout/icon.png",
+  "environment": "*",
+  "mixins": [
+    "badstdout.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.0",
+    "minecraft": "1.17.*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/ktasEy4"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.szum123321.badstdout.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "LoggerPrintStreamMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

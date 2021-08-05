@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "test_badstdout",
+  "version": "${version}",
+  "name": "Badstdout Test",
+  "license": "GPL-3.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.szum123321.test.badstdout.BadstdoutTest"
+    ]
+  },
+  "mixins": [
+    "badstdout-test.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "minecraft": "1.17.1",
+    "badstdout": "*"
+  }
+}
