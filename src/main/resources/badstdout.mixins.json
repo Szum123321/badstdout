@@ -4,7 +4,7 @@
   "package": "net.szum123321.badstdout.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "LoggerPrintStreamMixin"
+    "EarlyInit"
   ],
   "injectors": {
     "defaultRequire": 1
