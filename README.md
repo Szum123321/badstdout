@@ -1,7 +1,5 @@
 # BadStdOut
 
-https://www.curseforge.com/minecraft/mc-mods/badstdout
-
 > Are you tierd of seeing those enigmatic logs just saying [STDOUT] ?  
 > Are you tierd of *some* mods just screaming at you and you not knowing which one is it?
 
