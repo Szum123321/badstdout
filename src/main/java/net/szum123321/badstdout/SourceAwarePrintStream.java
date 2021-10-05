@@ -162,12 +162,16 @@ public class SourceAwarePrintStream extends PrintStream {
 
     //Find the class that called LoggerPrintStream.println
     private Optional<String> getCallerClassName() {
-        StackWalker.StackFrame element = StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE)
+        Optional<StackWalker.StackFrame> optionalElement = StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE)
                 .walk((s) -> s
                         //skip all elements that are castable to PrintStream
                         .dropWhile(f -> PrintStream.class.isAssignableFrom(f.getDeclaringClass()))
-                        .findFirst()) //get the 5th stack frame
-                .orElseThrow();
+                        .findFirst()
+                );
+
+        if(optionalElement.isEmpty()) return Optional.empty();
+
+        StackWalker.StackFrame element = optionalElement.get();
 
         if(element.getClassName().startsWith("java") || element.getClassName().startsWith("sun")) {
             //Something form within jdk called System.out.println.
@@ -177,7 +181,7 @@ public class SourceAwarePrintStream extends PrintStream {
 
         /*
          * Minecraft internally uses a logger practically everywhere.
-         * >Boys, we've got a lazy mixin no our hands<
+         * >Boys, we've got a lazy mixin on our hands<
          * Luckily mixin annotates every injected method with { @link org.spongepowered.asm.mixin.transformer.meta.MixinMerged }
          */
         if(element.getClassName().startsWith("net.minecraft")) {
