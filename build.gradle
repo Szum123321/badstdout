@@ -98,5 +98,7 @@ publishing {
 static def getMcMajor(ver) {
     String[] arr = ((String)ver).split("\\.");
 
+    if(arr.length < 3) return ver;
+
     return (String)(arr[0] + "." + arr[1]);
 }
