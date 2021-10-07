@@ -27,6 +27,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class EarlyInit {
     @Inject(method = "initialize", at = @At(value = "INVOKE", shift = At.Shift.AFTER, target = "Lnet/minecraft/Bootstrap;setOutputStreams()V"))
     private static void setOutput(CallbackInfo ci) {
+        //Minecraft itself replaces stdout with it's own implementation that redirects System.out.println to logger and adds '[STDOUT]'
+        //this is the earliest it makes sense to replace the System.out
         System.setOut(new SourceAwarePrintStream("STDOUT", System.out));
     }
 }
