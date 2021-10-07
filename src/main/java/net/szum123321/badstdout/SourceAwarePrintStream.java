@@ -174,8 +174,8 @@ public class SourceAwarePrintStream extends PrintStream {
         StackWalker.StackFrame element = optionalElement.get();
 
         if(element.getClassName().startsWith("java") || element.getClassName().startsWith("sun")) {
-            //Something form within jdk called System.out.println.
-            //It is possible that it's due to some mod calling java built-in function, but it's safer to just let it go
+            //Something from within jdk called System.out.println
+            //Possibly it's due to some mod calling java built-in function, but it's safer to just let it go
             return Optional.empty();
         }
 
