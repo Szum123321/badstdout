@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.9-SNAPSHOT'
+    id 'fabric-loom' version '0.10-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -11,6 +11,12 @@ version = "${project.mod_version}-${getMcMajor(project.minecraft_version)}"
 group = project.maven_group
 
 repositories {
+    maven {
+        url "https://maven.terraformersmc.com/releases/"
+        content {
+            includeGroup "com.terraformersmc"
+        }
+    }
 }
 
 dependencies {
@@ -18,6 +24,9 @@ dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    //Include modmenu for testing purposes
+    modRuntime("com.terraformersmc:modmenu:${project.modmenu_version}")
 }
 
 processResources {
