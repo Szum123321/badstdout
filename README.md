@@ -5,6 +5,6 @@
 
 ## Fear no more, as BadStdOut is here to save the day!
 
-![icon](https://raw.githubusercontent.com/Szum123321/badstdout/master/icon.png)
+![icon](https://raw.githubusercontent.com/Szum123321/badstdout/master/src/main/resources/assets/badstdout/icon.png)
 
 For how to install see: [Fabric wiki](https://fabricmc.net/)
