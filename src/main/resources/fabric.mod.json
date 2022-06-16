@@ -22,7 +22,7 @@
     "badstdout.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.0",
+    "fabricloader": ">=0.14.0",
     "minecraft": "~1.19"
   },
   "custom": {
