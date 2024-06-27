@@ -30,5 +30,6 @@ public class EarlyInit {
         //Minecraft itself replaces stdout with its own implementation that redirects System.out.println to logger and adds '[STDOUT]'
         //this is the earliest it makes sense to replace the System.out
         System.setOut(new SourceAwarePrintStream("STDOUT", System.out));
+        System.setErr(new SourceAwarePrintStream("STDERR", System.err));
     }
 }
